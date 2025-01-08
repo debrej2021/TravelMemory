@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s # Default scrape interval
+
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Scrape Node.js backend
+  - job_name: 'nodejs-backend'
+    static_configs:
+      - targets: ['172.16.1.18:5000'] # Replace with your bac172.16.1.18kend's host:port
